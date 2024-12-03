@@ -22,7 +22,8 @@ class Room extends Model
         'capacity',
         'price_per_night',
         'availability_status',
-    ];
+        'image_path',
+        ];
 
     protected $casts = [
         'price_per_night' => 'decimal:2',
