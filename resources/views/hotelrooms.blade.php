@@ -7,7 +7,7 @@
     <title>Hotel Reservation System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
+<x-app-layout>
 <body>
     <div class="container my-5">
         <div class="row">
@@ -19,7 +19,7 @@
                     <input type="text" name="search" class="form-control me-2" placeholder="Search rooms..." value="{{ $search ?? '' }}">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </form>
-                
+
                 <!-- Rooms Table -->
                 <table class="table table-bordered table-striped">
                     <thead class="table-dark">
@@ -103,5 +103,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-</html>
+</x-app-layout>
