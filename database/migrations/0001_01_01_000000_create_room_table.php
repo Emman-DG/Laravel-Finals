@@ -19,12 +19,9 @@ return new class extends Migration
             $table->integer('capacity');
             $table->decimal('price_per_night', 12, 2);
             $table->boolean('availability_status');
+            $table->text('image_path')->nullable(); 
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('rooms');
