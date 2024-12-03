@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,4 +24,4 @@ Route::get('/hotelrooms', [RoomController::class, 'index'])->name('rooms.index')
 
 Route::post('/hotelrooms', [RoomController::class, 'store'])->name('rooms.store');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

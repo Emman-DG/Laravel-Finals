@@ -10,15 +10,15 @@ class RoomController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-    
+
         $rooms = Room::query()
             ->when($search, function ($query, $search) {
                 $query->where('room_number', 'like', "%$search%")
-                      ->orWhere('room_type', 'like', "%$search%")
-                      ->orWhere('description', 'like', "%$search%")
-                      ->orWhere('capacity', 'like', "%$search%")
-                      ->orWhere('price_per_night', 'like', "%$search%");
-    
+                    ->orWhere('room_type', 'like', "%$search%")
+                    ->orWhere('description', 'like', "%$search%")
+                    ->orWhere('capacity', 'like', "%$search%")
+                    ->orWhere('price_per_night', 'like', "%$search%");
+
                 // Handle "Available" and "Not Available" keywords
                 if (strtolower($search) === 'available') {
                     $query->orWhere('availability_status', 1);
@@ -27,8 +27,8 @@ class RoomController extends Controller
                 }
             })
             ->get();
-    
-        return view('welcome', compact('rooms', 'search'));
+
+        return view('hotelrooms', compact('rooms', 'search'));
     }
 
     public function store(Request $request)
